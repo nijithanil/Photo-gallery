@@ -1,6 +1,6 @@
 # Photo-gallery
 
-User to register and add A post & user should be able to edit,delete,update and view datas
+This is photo gallery website and User to register and add the post & user should be able to edit,delete,update and view datas
 
 
 
