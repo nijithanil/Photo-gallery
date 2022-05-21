@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<style>
+body {
+  background-color: lightblue;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+ <div class="row">
+          <div class="input-field col s12" >
+              <a href="add"><input class="btn waves-effect waves-light col s12" style="color:black" type="submit"  value="ADD YOUR PHOTOGRAPHY"></a>
+          </div>
+        </div><br><br>
+    <div class="row">
+{% for i in products %}
+   <div class="col-md-4">
+  <div class="card" style="width: 25rem;">
+      <a href="{% url 'detail' i.id %}" ><img class="card-img-top" src="{{i.img.url}}" alt="Card image cap" style='height:500px;width:400px;' ></a>
+  <div class="card-body">
+    <h5 class="card-title">{{i.name}}</h5>
+<!--    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+    <a href="{% url 'detail' i.id %}" class="btn btn-primary">Go Details</a>
+  </div>
+</div>
+         </div>
+{% endfor %}
+</div>
+  </div>
+
+
+</body>
+</html>
+{% endblock %}

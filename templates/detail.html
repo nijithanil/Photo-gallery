@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<style>
+body {
+  background-color: lightblue;
+}
+.center {
+  margin-left: 300px;
+  width: 60%;
+  padding: 20px;
+}
+</style>
+</head>
+<body>
+
+<div class="center">
+<div class="container"  >
+     <div class="row">
+       <div class="col-md-4">
+           <div class="center">
+  <div class="card" style="width: 33rem;">
+      <h5 class="card-title" style="margin-top:25px;"><b>{{product.name}}</b></h5><br>
+  <div class="card-body">
+      <img class="card-img-top" src="{{product.img.url}}" alt="Card image cap" style='height:100%;width:100%;'><br><br>
+      Place : {{product.location}}<br><br>
+      Price : {{product.price}}/-<br><br>
+    <a class="btn btn-warning" href="{% url 'update' product.id %}">EDIT</a>
+    <a class="btn btn-danger" href="{% url 'delete' product.id %}">DELETE</a>
+  </div>
+</div>
+               </div>
+       </div>
+ </div>
+  </div>
+    </div>
+
+<!--    <img src="{{product.img.url}}" alt='' style='hieght:300px;width:300px;'><br>-->
+<!--    {{product.name}}<br>-->
+<!--    {{product.desc}}<br>-->
+<!--    {{product.price}}<br>-->
+
+
+<!--    <a class="btn btn-warning" href="{% url 'update' product.id %}">UPDATE</a>-->
+<!--    <a class="btn btn-danger" href="{% url 'delete' product.id %}">DELETE</a>-->
+
+
+</body>
+</html>
+{% endblock %}
